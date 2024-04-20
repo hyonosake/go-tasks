@@ -10,35 +10,35 @@ import (
 func TestSlowOne_WithSmallBatch_Positive(t *testing.T) {
 	requests := []Request{
 		{
-			uuid:  "uuid_1",
-			input: 1,
+			Uuid:  "uuid_1",
+			Input: 1,
 		},
 		{
-			uuid:  "uuid_2",
-			input: 2,
+			Uuid:  "uuid_2",
+			Input: 2,
 		},
 		{
-			uuid:  "uuid_3",
-			input: 3,
+			Uuid:  "uuid_3",
+			Input: 3,
 		},
 		{
-			uuid:  "uuid_4",
-			input: 4,
+			Uuid:  "uuid_4",
+			Input: 4,
 		},
 	}
 
 	expectedResult := map[string]Response{
-		"uuid_1": {
-			result: 1,
+		"Uuid_1": {
+			Result: 1,
 		},
-		"uuid_2": {
-			result: 2,
+		"Uuid_2": {
+			Result: 2,
 		},
-		"uuid_3": {
-			result: 3,
+		"Uuid_3": {
+			Result: 3,
 		},
-		"uuid_4": {
-			result: 4,
+		"Uuid_4": {
+			Result: 4,
 		},
 	}
 	result := slowLoad(requests)
@@ -52,9 +52,9 @@ func TestSlowOne_WithLargeBatch_Positive(t *testing.T) {
 	expectedResult := make(map[string]Response)
 
 	for i := 0; i < amount; i++ {
-		uuid := fmt.Sprintf("uuid_%d", i)
-		requests = append(requests, Request{uuid: uuid, input: int64(i)})
-		expectedResult[uuid] = Response{result: int64(i)}
+		uuid := fmt.Sprintf("Uuid_%d", i)
+		requests = append(requests, Request{Uuid: uuid, Input: int64(i)})
+		expectedResult[uuid] = Response{Result: int64(i)}
 	}
 
 	result := slowLoad(requests)
