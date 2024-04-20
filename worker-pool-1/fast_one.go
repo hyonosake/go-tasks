@@ -20,7 +20,6 @@ func FastLoad(requests []Request) map[string]Response {
 			mu.Lock()
 			results[reqs.Uuid] = looooooad(reqs)
 			mu.Unlock()
-			fmt.Println("a", reqs.Uuid, reqs.Input)
 		}()
 
 	}
