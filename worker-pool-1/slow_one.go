@@ -6,18 +6,18 @@ import (
 )
 
 type Request struct {
-	uuid  string // уникальный идентификатор задачи
-	input int64
+	Uuid  string // уникальный идентификатор задачи
+	Input int64
 }
 
 type Response struct {
-	result int64
+	Result int64
 }
 
 func slowLoad(requests []Request) map[string]Response {
 	result := make(map[string]Response)
 	for _, req := range requests {
-		result[req.uuid] = looooooad(req)
+		result[req.Uuid] = looooooad(req)
 	}
 
 	return result
@@ -25,5 +25,5 @@ func slowLoad(requests []Request) map[string]Response {
 
 func looooooad(r Request) Response {
 	time.Sleep(rand.N(100 * time.Millisecond))
-	return Response{result: r.input}
+	return Response{Result: r.Input}
 }
