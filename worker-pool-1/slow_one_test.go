@@ -10,19 +10,19 @@ import (
 func TestSlowOne_WithSmallBatch_Positive(t *testing.T) {
 	requests := []Request{
 		{
-			Uuid:  "uuid_1",
+			Uuid:  "Uuid_1",
 			Input: 1,
 		},
 		{
-			Uuid:  "uuid_2",
+			Uuid:  "Uuid_2",
 			Input: 2,
 		},
 		{
-			Uuid:  "uuid_3",
+			Uuid:  "Uuid_3",
 			Input: 3,
 		},
 		{
-			Uuid:  "uuid_4",
+			Uuid:  "Uuid_4",
 			Input: 4,
 		},
 	}
